@@ -22,6 +22,9 @@ super + Return
 super + b
   firefox &
 
+XF86Eject
+  ~/.config/bspwm/peek_cheatsheets.sh
+
 # WINDOW RULES
 
 # kill window
@@ -42,7 +45,7 @@ super + {1-9,0}
 
 # move window to workspace numbered
 super + shift + {1-9,0}
-	bspc node -d '^{1-9,10}' 
+	bspc node -d '^{1-9,10}' --follow
 
 # change the position of focused window
 super + shift + {h,j,k,l}
@@ -63,6 +66,13 @@ super + ctrl + {1-9}
 # cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
+
+# resize windows
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0 || bspc node -z right -20 0, \
+		      bottom 0 20 || bspc node -z top 0 20, \
+		      top 0 -20 || bspc node -z bottom 0 -20, \
+		      right 20 0 || bspc node -z left 20 0}
 
 # VOLUME AND BRIGHTNESS SETTINGS
 
@@ -85,3 +95,11 @@ XF86MonBrightnessUp
 # decrease brightness
 XF86MonBrightnessDown
 	brightnessctl set 5%-
+
+# screenshot entire screen
+XF86LaunchA
+  flameshot full
+
+# screenshot an area of screen
+XF86LaunchB
+  flameshot gui
