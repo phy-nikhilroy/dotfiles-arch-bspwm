@@ -15,6 +15,7 @@ return {
 			},
 			git = {
 				enable = true,
+				ignore = false,
 			},
 			-- This new block forcefully disables all visual icons in the tree
 			renderer = {
