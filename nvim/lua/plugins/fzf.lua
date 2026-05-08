@@ -24,6 +24,20 @@ return {
 			end,
 			desc = "FZF Buffers",
 		},
+		{
+			"<leader>fd",
+			function()
+				require("fzf-lua").diagnostics_workspace()
+			end,
+			desc = "FZF Workspace Diagnostics",
+		},
+		{
+			"<leader>fs",
+			function()
+				require("fzf-lua").lsp_document_symbols()
+			end,
+			desc = "FZF Document Symbols",
+		},
 	},
 
 	opts = {},
