@@ -56,7 +56,7 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = {},
+				lualine_b = { "branch" },
 				lualine_c = { "filename" },
 				lualine_x = {},
 				lualine_y = {},
@@ -64,7 +64,7 @@ return {
 			},
 			inactive_sections = {
 				lualine_a = {},
-				lualine_b = {},
+				lualine_b = { "branch" },
 				lualine_c = { "filename" },
 				lualine_x = { "location" },
 				lualine_y = {},
