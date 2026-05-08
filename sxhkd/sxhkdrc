@@ -22,8 +22,8 @@ super + Return
 super + b
   firefox &
 
-XF86Eject
-  ~/.config/bspwm/peek_cheatsheets.sh
+# XF86Eject
+#   ~/.config/bspwm/peek_cheatsheets.sh
 
 # WINDOW RULES
 

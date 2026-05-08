@@ -16,33 +16,33 @@ return {
 			normal = {
 				a = { bg = colors.dark, fg = colors.white, gui = "bold" },
 				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.gray },
+				c = { bg = colors.none, fg = colors.light },
 			},
 			insert = {
 				-- Invert black and white for Insert mode so it visually pops without using color
 				a = { bg = colors.white, fg = colors.black, gui = "bold" },
 				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.gray },
+				c = { bg = colors.none, fg = colors.light },
 			},
 			visual = {
 				a = { bg = colors.gray, fg = colors.white, gui = "bold" },
 				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.gray },
+				c = { bg = colors.none, fg = colors.light },
 			},
 			replace = {
 				a = { bg = colors.light, fg = colors.black, gui = "bold" },
 				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.gray },
+				c = { bg = colors.none, fg = colors.light },
 			},
 			command = {
 				a = { bg = colors.gray, fg = colors.white, gui = "bold" },
 				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.gray },
+				c = { bg = colors.none, fg = colors.light },
 			},
 			inactive = {
 				a = { bg = colors.none, fg = colors.dark },
 				b = { bg = colors.none, fg = colors.dark },
-				c = { bg = colors.none, fg = colors.dark },
+				c = { bg = colors.none, fg = colors.gray },
 			},
 		}
 
