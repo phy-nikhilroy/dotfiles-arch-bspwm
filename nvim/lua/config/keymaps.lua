@@ -1,4 +1,5 @@
 vim.keymap.set("n", "<leader>c", ":nohlsearch<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
