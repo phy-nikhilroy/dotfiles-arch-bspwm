@@ -15,29 +15,29 @@ return {
 		local custom_monochrome = {
 			normal = {
 				a = { bg = colors.dark, fg = colors.white, gui = "bold" },
-				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.light },
+				b = { bg = colors.none, fg = colors.black },
+				c = { bg = colors.none, fg = colors.white },
 			},
 			insert = {
 				-- Invert black and white for Insert mode so it visually pops without using color
 				a = { bg = colors.white, fg = colors.black, gui = "bold" },
-				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.light },
+				b = { bg = colors.none, fg = colors.black },
+				c = { bg = colors.none, fg = colors.white },
 			},
 			visual = {
 				a = { bg = colors.gray, fg = colors.white, gui = "bold" },
-				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.light },
+				b = { bg = colors.none, fg = colors.black },
+				c = { bg = colors.none, fg = colors.white },
 			},
 			replace = {
 				a = { bg = colors.light, fg = colors.black, gui = "bold" },
-				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.light },
+				b = { bg = colors.none, fg = colors.black },
+				c = { bg = colors.none, fg = colors.white },
 			},
 			command = {
 				a = { bg = colors.gray, fg = colors.white, gui = "bold" },
-				b = { bg = colors.none, fg = colors.gray },
-				c = { bg = colors.none, fg = colors.light },
+				b = { bg = colors.none, fg = colors.black },
+				c = { bg = colors.none, fg = colors.white },
 			},
 			inactive = {
 				a = { bg = colors.none, fg = colors.dark },
