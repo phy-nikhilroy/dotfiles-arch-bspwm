@@ -46,6 +46,10 @@ return {
 
 				map("K", vim.lsp.buf.hover, "Hover Documentation")
 				map("<leader>rn", vim.lsp.buf.rename, "Rename Variable")
+				map("<leader>ca", vim.lsp.buf.code_action, "Code Action")
+				map("[d", vim.diagnostic.goto_prev, "Previous Diagnostic")
+				map("]d", vim.diagnostic.goto_next, "Next Diagnostic")
+				map("<leader>df", vim.diagnostic.open_float, "Show Diagnostic Float")
 			end,
 		})
 	end,
