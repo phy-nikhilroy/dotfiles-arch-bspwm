@@ -1,2 +1,11 @@
 CLAUDE.md
 nvim/lazy-lock.json
+
+# editor noise
+*.swp
+*.swo
+*~
+
+# OS noise
+.DS_Store
+Thumbs.db
