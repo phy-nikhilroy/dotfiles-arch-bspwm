@@ -47,6 +47,16 @@ if [ -d "$DOTFILES_DIR/home" ]; then
     done
 fi
 
+echo "==> Setting up AI assistant global profiles (Claude Code & Antigravity)..."
+if [ -f "$DOTFILES_DIR/ai/system-profile.md" ]; then
+    link_item "$DOTFILES_DIR/ai/system-profile.md" "$HOME/.claude/CLAUDE.md"
+    link_item "$DOTFILES_DIR/ai/system-profile.md" "$HOME/.gemini/config/AGENTS.md"
+fi
+
+if [ -f "$DOTFILES_DIR/AGENTS.md" ]; then
+    link_item "$DOTFILES_DIR/AGENTS.md" "$DOTFILES_DIR/CLAUDE.md"
+fi
+
 echo "==> All symlinks configured successfully!"
 if [ -d "$BACKUP_DIR" ]; then
     echo "==> Backups saved to: $BACKUP_DIR"
