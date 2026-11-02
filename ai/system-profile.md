@@ -41,9 +41,16 @@
 - **Python**: Never install packages globally using `pip`; use `pacman` or create virtual environments (`python -m venv .venv`).
 - Verify syntax of shell scripts and configuration files before applying reloads.
 
-## Git Commit Rules
-- Author must always be `Nikhil Roy <phy.nikhilroy@gmail.com>`.
-- Do not append any AI co-author attribution, signatures, or assistant tags to git commit messages.
+## Git Workflow & Commit Standards
+- **Author Identity**: Author must always be `Nikhil Roy <phy.nikhilroy@gmail.com>`.
+- **No AI Attribution**: Never append AI co-author tags (`Co-authored-by: ...`), signatures, or assistant watermarks in git commit messages.
+- **Regular Commits**: Make frequent, atomic commits for discrete, well-tested units of work.
+- **Proactive Commit Reminders**: Always prompt and remind the user to consider committing whenever a logical step, refactor, or feature milestone is completed.
+- **Commit Message Quality**: Keep commit messages concise, clear, and professional (imperative mood or Conventional Commits: `feat:`, `fix:`, `refactor:`, `chore:`).
+
+## Style, Tone & Communication
+- **No Emojis**: Do not use emojis anywhere—strictly avoid them in git commit messages, code comments, documentation, and assistant responses.
+- **Professional Tone**: Keep language concise, objective, direct, and strictly professional across all interactions.
 
 ## Project Guidelines for AI Assistants (AGENTS.md & CLAUDE.md)
 - For every project repository worked on:
