@@ -96,3 +96,16 @@ vim.opt.foldlevel = 99 -- Keep all folds open by default
 -- Split Behavior
 vim.opt.splitbelow = true -- Horizontal splits open below
 vim.opt.splitright = true -- Vertical splits open to the right
+
+-- Transparency: let terminal background show through
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+  end,
+})
+vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })

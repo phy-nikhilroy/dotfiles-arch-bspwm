@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 	},
 
@@ -21,6 +22,19 @@ return {
 				"pyright",
 				"bashls",
 				"lua_ls",
+				"gopls",
+			},
+		})
+
+		require("mason-tool-installer").setup({
+			ensure_installed = {
+				"prettier",
+				"stylua",
+				"isort",
+				"black",
+				"clang-format",
+				"shfmt",
+				"tree-sitter-cli",
 			},
 		})
 

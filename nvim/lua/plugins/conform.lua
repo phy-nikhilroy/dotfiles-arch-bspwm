@@ -21,14 +21,14 @@ return {
 
 			-- 2. Format on save magic
 			format_on_save = {
-				timeout_ms = 500, -- Give it half a second to finish
+				timeout_ms = 2000, -- Give it up to 2 seconds to finish
 				lsp_format = "fallback", -- The crucial setting! Stops formatter conflicts.
 			},
 		})
 
 		-- 3. A manual keymap just in case you want to format without saving
 		vim.keymap.set({ "n", "v" }, "<leader>fm", function()
-			require("conform").format({ lsp_format = "fallback", timeout_ms = 500 })
+			require("conform").format({ lsp_format = "fallback", timeout_ms = 2000 })
 		end, { desc = "Format file or range (Conform)" })
 	end,
 }

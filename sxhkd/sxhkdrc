@@ -31,6 +31,18 @@ super + b
 super + q
   bspc node -c
 
+# toggle floating (tiled <-> floating, or exit fullscreen/floating to tiled)
+super + space
+  bspc node -t "$(bspc query -N -n focused.tiled >/dev/null && echo floating || echo tiled)"
+
+# toggle fullscreen (fullscreen <-> tiled)
+super + f
+  bspc node -t "$(bspc query -N -n focused.fullscreen >/dev/null && echo tiled || echo fullscreen)"
+
+# force normal tiled mode
+super + shift + space
+  bspc node -t tiled
+
 # move to window
 super + {h,j,k,l}
 	bspc node -f {west,south,north,east}
