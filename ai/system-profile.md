@@ -44,3 +44,11 @@
 ## Git Commit Rules
 - Author must always be `Nikhil Roy <phy.nikhilroy@gmail.com>`.
 - Do not append any AI co-author attribution, signatures, or assistant tags to git commit messages.
+
+## Project Guidelines for AI Assistants (AGENTS.md & CLAUDE.md)
+- For every project repository worked on:
+  1. Maintain the canonical project context, setup instructions, architecture notes, and test commands in `AGENTS.md` at the project root.
+  2. Symlink `CLAUDE.md` to `AGENTS.md` (`ln -sf AGENTS.md CLAUDE.md`) so both Claude Code and Antigravity share identical project instructions without duplicate files.
+  3. Keep `CLAUDE.md` in `.gitignore` if the repository tracks `AGENTS.md`, preventing duplicate tracking.
+  4. Always reference and keep `AGENTS.md` up to date as project conventions evolve.
+
