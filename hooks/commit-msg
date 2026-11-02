@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+COMMIT_MSG_FILE="$1"
+COMMIT_MSG="$(cat "$COMMIT_MSG_FILE")"
+
+# 1. Enforce No AI co-authorship / attribution
+if grep -qiE "co-authored-by:|assistant|gemini|claude|chatgpt" "$COMMIT_MSG_FILE"; then
+    echo "[ERROR] Commit rejected: AI co-authorship or assistant attribution detected in commit message."
+    exit 1
+fi
+
+# 2. Enforce No Emojis in commit message (checks for multibyte unicode emoji range patterns)
+if python3 -c '
+import sys, re
+with open(sys.argv[1]) as f:
+    text = f.read()
+# Pattern matching unicode emoji / pictograph ranges
+emoji_pattern = re.compile(r"[\U00010000-\U0010ffff]", flags=re.UNICODE)
+if emoji_pattern.search(text):
+    sys.exit(1)
+' "$COMMIT_MSG_FILE" 2>/dev/null; then
+    :
+else
+    echo "[ERROR] Commit rejected: Emojis are strictly forbidden in commit messages."
+    exit 1
+fi
+
+exit 0

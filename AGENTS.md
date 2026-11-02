@@ -10,6 +10,8 @@ This repository contains the system dotfiles and desktop configurations for an A
 - `kitty/`: Terminal emulator configuration (`kitty.conf`).
 - `nvim/`: Neovim setup (`init.lua`, `lua/config/`, `lua/plugins/`).
 - `home/`: User home files (`.bashrc`, `.bash_profile`, `.xinitrc`).
+- `git/`: Global git configuration (`ignore`).
+- `hooks/`: Git pre-commit and commit-msg quality enforcement hooks.
 - `ai/`: Host system profile (`system-profile.md`) symlinked globally for AI assistants.
 - `setup-symlinks.sh`: Script to idempotently verify and apply all symlinks with automatic backups.
 

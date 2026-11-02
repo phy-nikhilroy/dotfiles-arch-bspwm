@@ -1,0 +1,29 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor & Swap files
+*.swp
+*.swo
+*~
+*.bak
+
+# Build artifacts & dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+venv/
+.venv/
+node_modules/
+dist/
+build/
+target/
+
+# Local environment & secrets (safety net)
+.env
+.env.local
+*.pem
+*.key

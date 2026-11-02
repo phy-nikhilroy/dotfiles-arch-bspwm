@@ -52,10 +52,16 @@
 - **No Emojis**: Do not use emojis anywhere—strictly avoid them in git commit messages, code comments, documentation, and assistant responses.
 - **Professional Tone**: Keep language concise, objective, direct, and strictly professional across all interactions.
 
+## Token Economy & Output Restraints
+- **Command Restraint**: Avoid unconstrained recursive search or bulk file reading commands. Always constrain discovery operations with tools like `head -n 30`, `tail -n 30`, `grep -m 15`, or specific directory limits.
+- **Log and Build Inspection**: Never dump massive log files, compiler trace dumps, or generated bundles directly into the prompt context; inspect filtered subsets or error lines only.
+- **Diff Scoping**: Inspect discrete file diffs (`git diff <path>`) rather than full repository diffs whenever possible.
+
 ## Project Guidelines for AI Assistants (AGENTS.md & CLAUDE.md)
 - For every project repository worked on:
   1. Maintain the canonical project context, setup instructions, architecture notes, and test commands in `AGENTS.md` at the project root.
   2. Symlink `CLAUDE.md` to `AGENTS.md` (`ln -sf AGENTS.md CLAUDE.md`) so both Claude Code and Antigravity share identical project instructions without duplicate files.
   3. Keep `CLAUDE.md` in `.gitignore` if the repository tracks `AGENTS.md`, preventing duplicate tracking.
-  4. Always reference and keep `AGENTS.md` up to date as project conventions evolve.
+  4. Maintain context hygiene: ensure build outputs, dependencies, vendor caches, and virtual environments (`node_modules/`, `.venv/`, `target/`, `dist/`, `.cache/`, `*.log`) are registered in `.gitignore` or `.ignore` to prevent agents from traversing or indexing large artifact directories.
+  5. Always reference and keep `AGENTS.md` up to date as project conventions evolve.
 

@@ -30,7 +30,7 @@ link_item() {
 }
 
 echo "==> Setting up .config directory symlinks..."
-CONFIG_DIRS=("bspwm" "sxhkd" "polybar" "kitty" "nvim")
+CONFIG_DIRS=("bspwm" "sxhkd" "polybar" "kitty" "nvim" "git")
 for dir in "${CONFIG_DIRS[@]}"; do
     if [ -d "$DOTFILES_DIR/$dir" ]; then
         link_item "$DOTFILES_DIR/$dir" "$HOME/.config/$dir"
@@ -55,6 +55,16 @@ fi
 
 if [ -f "$DOTFILES_DIR/AGENTS.md" ]; then
     link_item "$DOTFILES_DIR/AGENTS.md" "$DOTFILES_DIR/CLAUDE.md"
+fi
+
+echo "==> Setting up Git repository hooks..."
+if [ -d "$DOTFILES_DIR/hooks" ] && [ -d "$DOTFILES_DIR/.git" ]; then
+    for hook in "$DOTFILES_DIR/hooks"/*; do
+        if [ -f "$hook" ]; then
+            hook_name="$(basename "$hook")"
+            link_item "$hook" "$DOTFILES_DIR/.git/hooks/$hook_name"
+        fi
+    done
 fi
 
 echo "==> All symlinks configured successfully!"
