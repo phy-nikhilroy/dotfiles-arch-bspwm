@@ -10,7 +10,6 @@ bspc config borderless_monocle true
 bspc config gapless_monocle true
 
 # Window rules
-bspc rule -a "cheatsheet_peek" state=floating border=off fullscreen=on focus=on
 bspc rule -a Pavucontrol state=floating
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Gcr-prompter state=floating
