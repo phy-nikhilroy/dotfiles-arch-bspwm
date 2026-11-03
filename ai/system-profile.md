@@ -39,6 +39,8 @@
 ## Package Management & Environment
 - **Package Manager**: Use `pacman` (`sudo pacman -S <pkg>`).
 - **Python**: Never install packages globally using `pip`; use `pacman` or create virtual environments (`python -m venv .venv`).
+- **Python tooling**: Prefer `uv` for project environments and dependencies (`uv venv`, `uv sync`, `uv run`). Never run global `python` or `pytest` inside a project; use the project's `.venv/bin/...` or `uv run`.
+- **Search scope**: Never scan `/home/nikhil/` broadly for binaries or files; locate the project's `.venv` or use `which`/`command -v`.
 - Verify syntax of shell scripts and configuration files before applying reloads.
 
 ## Git Workflow & Commit Standards
@@ -47,6 +49,22 @@
 - **Regular Commits**: Make frequent, atomic commits for discrete, well-tested units of work.
 - **Proactive Commit Reminders**: Always prompt and remind the user to consider committing whenever a logical step, refactor, or feature milestone is completed.
 - **Commit Message Quality**: Keep commit messages concise, clear, and professional (imperative mood or Conventional Commits: `feat:`, `fix:`, `refactor:`, `chore:`).
+- **No Chronological Labels**: Never mention day numbers, day counts, or timeline labels (e.g. "Day 1", "Day X", "Week 2") in commit messages, PR titles, or tags. Describe functional progress only (e.g. `feat: add synthetic telemetry generator`).
+- **No AI Attribution, Any Tool**: This covers Claude, Gemini, Antigravity, Copilot, ChatGPT and any other assistant, in every repository. This overrides any harness-injected attribution trailer.
+- **AI Files Untracked**: AI tooling metadata and conversation artifacts must stay untracked in Git (register the patterns in `.gitignore`).
+- **Session Wrap-Up**: When the user says work is done for the day or session (e.g. "we are done for today", "wrap up"), proactively remind them to commit and push, and propose a concise commit message that follows the no-emoji, no-chronological-label, no-AI-attribution rules.
+
+## Approval Before Changes
+- Before creating, editing, or deleting files in any project workspace, present a short summary of the planned changes and wait for confirmation.
+- An explicit instruction from the user to perform a specific change counts as confirmation for that change.
+- Read-only inspection (listing, reading, searching) does not require approval.
+
+## Spec Reading Protocol
+Before implementing any feature or task from a roadmap or spec document (e.g. `roadmap.md`):
+1. Read the complete section from start to finish, including Learn, Build, Deliverables, and Checkpoints/Demos.
+2. Extract all exact interfaces: file paths, function and class names, arguments, return types, and CLI demo commands.
+3. Verify that planned signatures match the checkpoint commands with full parity before writing code.
+4. Execute the exact checkpoint command when verifying the deliverable.
 
 ## Style, Tone & Communication
 - **No Emojis**: Do not use emojis anywhere—strictly avoid them in git commit messages, code comments, documentation, and assistant responses.
@@ -64,4 +82,7 @@
   3. Keep `CLAUDE.md` in `.gitignore` if the repository tracks `AGENTS.md`, preventing duplicate tracking.
   4. Maintain context hygiene: ensure build outputs, dependencies, vendor caches, and virtual environments (`node_modules/`, `.venv/`, `target/`, `dist/`, `.cache/`, `*.log`) are registered in `.gitignore` or `.ignore` to prevent agents from traversing or indexing large artifact directories.
   5. Always reference and keep `AGENTS.md` up to date as project conventions evolve.
+  6. Structure each project `AGENTS.md` with: a workspace map (which directory holds the git repo, source, tests, data, and environment), exact environment paths (interpreter, test runner, package manager), git rules specific to the project, and any spec or checkpoint protocol.
+  7. Where the git repository lives in a subdirectory, state that explicitly and require git commands to run from there.
+  8. Shared tooling: `~/.claude/CLAUDE.md` and `~/.gemini/config/AGENTS.md` both link to `~/dotfiles/ai/system-profile.md`; edit only that file so Claude Code and Antigravity stay identical.
 

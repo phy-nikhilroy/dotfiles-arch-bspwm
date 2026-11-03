@@ -26,4 +26,10 @@ else
     exit 1
 fi
 
+# 3. Enforce no chronological labels (day numbers, week numbers)
+if grep -qiE "\b(day|week)[ -]?[0-9]+\b" "$COMMIT_MSG_FILE"; then
+    echo "[ERROR] Commit rejected: day/week numbers are not allowed in commit messages. Describe functional progress instead."
+    exit 1
+fi
+
 exit 0
